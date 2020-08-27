@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
 	Graph G1; int startingNode=1, endingNode=3;
-	//G1.takeInput();
+	G1.takeInput();
 	/*cout<<"\nDFS: ";	
 	int numOfComponents = G1.dfs(startingNode);
 	cout<<"\nNumber of Connected Components: "<<numOfComponents;
@@ -23,8 +23,13 @@ int main(){
 	for(int node:path) cout<<" "<<node;
 	*/
 
-	Grid G;
+	/*Grid G;
 	G.takeInput();
 	cout<<"Distance: "<<G.bfsOnGrid(1,1);
+	*/
+
+	cout<<"Topological Sort: ";
+	G1.topologicalSort();
+
 	return 0;
 }

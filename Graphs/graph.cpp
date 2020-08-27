@@ -19,7 +19,11 @@ public:
 	vector<int> bfs(int startingNode);
 	vector<int> reconstructPathFromBFS(vector<int> prev,
 			int startingNode, int endingNode);
-	int bfsOnGrid(int startingRow,int startingCol);
+	int bfsOnGrid(int startingRow, int startingCol);
+	void tSortUtil(int node, vector<bool> &vis,
+	vector<int> &order);
+	vector<int> topologicalSort();
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
+#include "topSort.cpp"

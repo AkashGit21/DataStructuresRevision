@@ -11,4 +11,3 @@ If you find anything useful, you are free to use the samples.
 Also, if there is anything sketchy in there, kindly inform me.
 
 Thanks!
-Akash Gupta
