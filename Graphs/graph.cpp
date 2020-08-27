@@ -17,7 +17,9 @@ public:
 	void dfsUtil(int startingNode,int source,vector<bool> &visited);
 	int dfs(int startingNode);
 	vector<int> bfs(int startingNode);
-	vector<int> reconstructPathFromBFS(vector<int> prev,int startingNode);
+	vector<int> reconstructPathFromBFS(vector<int> prev,
+			int startingNode, int endingNode);
 	int bfsOnGrid(int startingRow,int startingCol);
 };
 #include "dfs.cpp"
+#include "bfs.cpp"
