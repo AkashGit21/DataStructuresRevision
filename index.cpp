@@ -7,8 +7,8 @@ using namespace std;
 #include "Grid/grid.cpp"
 
 int main(){
-	Graph G1; int startingNode=1, endingNode=8;
-	//G1.takeInput();
+	Graph G1; int startingNode=1, endingNode=5;
+	G1.takeInput();
 	/*cout<<"\nDFS: ";	
 	int numOfComponents = G1.dfs(startingNode);
 	cout<<"\nNumber of Connected Components: "<<numOfComponents;
@@ -25,7 +25,7 @@ int main(){
 
 	cout<<"Topological Sort: ";
 	G1.topologicalSort();
-	*/	
+	
 	G1.dagInput();
 	cout<<"\nSSSP on DAG: ";
 	vector<vector<ll> > dist = G1.dagShortestPath();
@@ -33,11 +33,17 @@ int main(){
 	vector<int> path = G1.getPath(dist, startingNode,
 		endingNode);
 	for(int tmp:path) cout<<tmp<<" ";
-	
+	*/
+	cout<<"Dijkstra's Path: ";
+	vector<vector<ll> > dist = G1.dijkstra(startingNode);
+	vector<int> path = G1.getPath(dist,startingNode,endingNode);
+	for(int tmp:path)
+		cout<<tmp<<" ";
 
 	/*Grid G;
 	G.takeInput();
 	cout<<"Distance: "<<G.bfsOnGrid(1,1);
 	*/
+
 	return 0;
 }

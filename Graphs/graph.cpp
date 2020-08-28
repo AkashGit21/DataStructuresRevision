@@ -8,11 +8,13 @@ public:
 		cin>>numOfNodes>>numOfVertices;
 		G.resize(numOfNodes+1,vector<int>());
 
-		int u,v;
+		int u,v; ll w;
 		for(int i=0;i<numOfVertices;++i){
 			cin>>u>>v;
+			cin>>w;
 			G[u].push_back(v);
 			G[v].push_back(u);
+			edgeW[{min(u,v),max(u,v)}]=w;
 		}
 	}
 	void dagInput(){
@@ -26,19 +28,26 @@ public:
 			edgeW[{u,v}]=weight;
 		}
 	}
+	
 	void dfsUtil(int startingNode,int source,vector<bool> &visited);
 	int dfs(int startingNode);
+	
 	vector<int> bfs(int startingNode);
 	vector<int> reconstructPathFromBFS(vector<int> prev,
 			int startingNode, int endingNode);
 	int bfsOnGrid(int startingRow, int startingCol);
+	
 	void tSortUtil(int node, vector<bool> &vis,
 	vector<int> &order);
 	vector<int> topologicalSort();
 	vector<vector<ll> > dagShortestPath();
 	vector<int> getPath(vector<vector<ll> > dist,
 	int startingNode, int endingNode);
+
+	vector<vector<ll> > dijkstra(int startingNode);
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
 #include "topSort.cpp"
+#include "getPath.cpp"
+#include "dijkstra.cpp"
