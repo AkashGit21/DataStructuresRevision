@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define ll long long
 using namespace std;
 
 #include "Graphs/graph.cpp"
@@ -6,8 +7,8 @@ using namespace std;
 #include "Grid/grid.cpp"
 
 int main(){
-	Graph G1; int startingNode=1, endingNode=3;
-	G1.takeInput();
+	Graph G1; int startingNode=1, endingNode=8;
+	//G1.takeInput();
 	/*cout<<"\nDFS: ";	
 	int numOfComponents = G1.dfs(startingNode);
 	cout<<"\nNumber of Connected Components: "<<numOfComponents;
@@ -21,15 +22,22 @@ int main(){
 	vector<int> path = G1.reconstructPathFromBFS(prev,
 		startingNode, endingNode);
 	for(int node:path) cout<<" "<<node;
-	*/
+
+	cout<<"Topological Sort: ";
+	G1.topologicalSort();
+	*/	
+	G1.dagInput();
+	cout<<"\nSSSP on DAG: ";
+	vector<vector<ll> > dist = G1.dagShortestPath();
+	cout<<"\nPath: ";
+	vector<int> path = G1.getPath(dist, startingNode,
+		endingNode);
+	for(int tmp:path) cout<<tmp<<" ";
+	
 
 	/*Grid G;
 	G.takeInput();
 	cout<<"Distance: "<<G.bfsOnGrid(1,1);
 	*/
-
-	cout<<"Topological Sort: ";
-	G1.topologicalSort();
-
 	return 0;
 }
