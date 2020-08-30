@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 #define ll long long
+#define INF 1e18 + 2
 using namespace std;
 
 #include "Graphs/graph.cpp"
@@ -33,12 +34,15 @@ int main(){
 	vector<int> path = G1.getPath(dist, startingNode,
 		endingNode);
 	for(int tmp:path) cout<<tmp<<" ";
-	*/
+	
 	cout<<"Dijkstra's Path: ";
-	vector<vector<ll> > dist = G1.dijkstra(startingNode);
+	vector<vector<ll> > dist = G1.lazyDijkstra(startingNode);
 	vector<int> path = G1.getPath(dist,startingNode,endingNode);
 	for(int tmp:path)
 		cout<<tmp<<" ";
+	*/
+	vector<ll> dist = G1.bellmanFord(startingNode);
+	
 
 	/*Grid G;
 	G.takeInput();

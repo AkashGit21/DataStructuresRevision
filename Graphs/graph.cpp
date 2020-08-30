@@ -13,8 +13,9 @@ public:
 			cin>>u>>v;
 			cin>>w;
 			G[u].push_back(v);
-			G[v].push_back(u);
-			edgeW[{min(u,v),max(u,v)}]=w;
+			edgeW[{u,v}]=w;
+		//	G[v].push_back(u);
+		//	edgeW[{min(u,v),max(u,v)}]=w;
 		}
 	}
 	void dagInput(){
@@ -44,10 +45,13 @@ public:
 	vector<int> getPath(vector<vector<ll> > dist,
 	int startingNode, int endingNode);
 
-	vector<vector<ll> > dijkstra(int startingNode);
+	vector<vector<ll> > lazyDijkstra(int startingNode);
+
+	vector<ll> bellmanFord(int startingNode);
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
 #include "topSort.cpp"
 #include "getPath.cpp"
 #include "dijkstra.cpp"
+#include "bellmanFord.cpp"

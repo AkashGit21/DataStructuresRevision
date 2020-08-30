@@ -7,7 +7,7 @@ public:
 	}
 };
 
-vector<vector<ll> > Graph::dijkstra(int startingNode){
+vector<vector<ll> > Graph::lazyDijkstra(int startingNode){
 	vector<bool> visited(numOfNodes+1,false);
 	vector<ll> dist(numOfNodes+1,1e18+1);
 	vector<ll> prev(numOfNodes+1,-1);
@@ -16,10 +16,9 @@ vector<vector<ll> > Graph::dijkstra(int startingNode){
 	pq.push({startingNode,0LL});
 	dist[startingNode]=0LL;
 	while(!pq.empty()){
-		auto cur = pq.top();
-		int curNode = cur.first;
-		ll wt = cur.second;
-		pq.pop();
+		auto cur = pq.top(); pq.pop(); 
+		int curNode = cur.first; ll wt = cur.second;
+		
 		if(dist[curNode]<wt) continue;
 		visited[curNode]=true;
 
