@@ -40,9 +40,13 @@ int main(){
 	vector<int> path = G1.getPath(dist,startingNode,endingNode);
 	for(int tmp:path)
 		cout<<tmp<<" ";
-	*/
-	vector<ll> dist = G1.bellmanFord(startingNode);
 	
+	vector<ll> dist = G1.bellmanFord(startingNode);
+	*/
+	//vector<vector<ll> > dp = G1.floydWarshall();
+	cout<<"\nBridges: ";
+	vector<pair<int,int> > bridges =
+	G1.findBridges();
 
 	/*Grid G;
 	G.takeInput();

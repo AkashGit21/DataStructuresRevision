@@ -1,7 +1,7 @@
 
 vector<int> Graph::bfs(int node){
 	vector<int> prev(numOfNodes+1,-1);
-	vector<bool> visited(numOfNodes+1,false);
+	visited.resize(numOfNodes+1,false);
 
 	queue<int> q;
 	q.push(node);

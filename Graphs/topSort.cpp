@@ -1,20 +1,19 @@
-void Graph::tSortUtil(int node,vector<bool> &vis,
-	vector<int> &order){
-	vis[node]=true;
+void Graph::tSortUtil(int node,	vector<int> &order){
+	visited[node]=true;
 	for(int child:G[node]){
-		if(vis[child]) continue;
-		tSortUtil(child,vis,order);
+		if(visited[child]) continue;
+		tSortUtil(child,order);
 	}
 	order.push_back(node);
 }
 
 vector<int> Graph::topologicalSort(){
 	vector<int> order;
-	vector<bool> visited(numOfNodes+1,false);
+	visited.resize(numOfNodes+1,false);
 
 	for(int i=1;i<=numOfNodes;i++){
 		if(visited[i]) continue;
-		tSortUtil(i,visited,order);
+		tSortUtil(i,order);
 	}
 	reverse(order.begin(), order.end());
 	for(int tmp:order) cout<<" "<<tmp;

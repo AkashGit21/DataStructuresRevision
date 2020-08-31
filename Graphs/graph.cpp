@@ -1,7 +1,9 @@
 
 class Graph{
 	int numOfNodes,numOfVertices;
+	vector<int> lowLink, ids;
 	vector<vector<int> > G;
+	vector<bool> visited;
 	map<pair<int,int>,ll> edgeW;
 public:
 	void takeInput(){
@@ -11,10 +13,10 @@ public:
 		int u,v; ll w;
 		for(int i=0;i<numOfVertices;++i){
 			cin>>u>>v;
-			cin>>w;
+		//	cin>>w;
 			G[u].push_back(v);
-			edgeW[{u,v}]=w;
-		//	G[v].push_back(u);
+		//	edgeW[{u,v}]=w;
+			G[v].push_back(u);
 		//	edgeW[{min(u,v),max(u,v)}]=w;
 		}
 	}
@@ -30,7 +32,7 @@ public:
 		}
 	}
 	
-	void dfsUtil(int startingNode,int source,vector<bool> &visited);
+	void dfsUtil(int startingNode,int source);
 	int dfs(int startingNode);
 	
 	vector<int> bfs(int startingNode);
@@ -38,8 +40,7 @@ public:
 			int startingNode, int endingNode);
 	int bfsOnGrid(int startingRow, int startingCol);
 	
-	void tSortUtil(int node, vector<bool> &vis,
-	vector<int> &order);
+	void tSortUtil(int node, vector<int> &order);
 	vector<int> topologicalSort();
 	vector<vector<ll> > dagShortestPath();
 	vector<int> getPath(vector<vector<ll> > dist,
@@ -48,6 +49,14 @@ public:
 	vector<vector<ll> > lazyDijkstra(int startingNode);
 
 	vector<ll> bellmanFord(int startingNode);
+
+	void propogateNegativeCycles(vector<vector<ll> >&dp, vector<vector<int> >&next); 
+	vector<vector<ll> > floydWarshall();
+
+	void traversal(int cur,int par, int val,
+		vector<pair<int,int> > &bridges);
+	vector<pair<int,int> > findBridges();
+
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
@@ -55,3 +64,5 @@ public:
 #include "getPath.cpp"
 #include "dijkstra.cpp"
 #include "bellmanFord.cpp"
+#include "floydWarshall.cpp"
+#include "bridge.cpp"

@@ -22,6 +22,7 @@ vector<ll> Graph::bellmanFord(int startingNode){
 			}
 		}
 	}
+	/*
 	for(int node=1;node<=numOfNodes;node++){
 		cout<<"\n"<<node<<": ";
 		if(dist[node]<=-1*INF)
@@ -29,5 +30,6 @@ vector<ll> Graph::bellmanFord(int startingNode){
 		else cout<<dist[node];
 	}
 	cout<<"\n";
+	*/
 	return dist;
 }
