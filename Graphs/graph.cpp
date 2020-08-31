@@ -36,15 +36,13 @@ public:
 	int dfs(int startingNode);
 	
 	vector<int> bfs(int startingNode);
-	vector<int> reconstructPathFromBFS(vector<int> prev,
-			int startingNode, int endingNode);
+	vector<int> reconstructPathFromBFS(vector<int> prev, int startingNode, int endingNode);
 	int bfsOnGrid(int startingRow, int startingCol);
 	
 	void tSortUtil(int node, vector<int> &order);
 	vector<int> topologicalSort();
 	vector<vector<ll> > dagShortestPath();
-	vector<int> getPath(vector<vector<ll> > dist,
-	int startingNode, int endingNode);
+	vector<int> getPath(vector<vector<ll> > dist, int startingNode, int endingNode);
 
 	vector<vector<ll> > lazyDijkstra(int startingNode);
 
@@ -57,6 +55,8 @@ public:
 		vector<pair<int,int> > &bridges);
 	vector<pair<int,int> > findBridges();
 
+	void traversalArt(int root, int cur, int src, int id, int &outEC, vector<bool> &isArt); 
+	vector<bool> findArticulationPoints();
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
@@ -66,3 +66,4 @@ public:
 #include "bellmanFord.cpp"
 #include "floydWarshall.cpp"
 #include "bridge.cpp"
+#include "articulationPoints.cpp"

@@ -42,11 +42,17 @@ int main(){
 		cout<<tmp<<" ";
 	
 	vector<ll> dist = G1.bellmanFord(startingNode);
-	*/
+
 	//vector<vector<ll> > dp = G1.floydWarshall();
+	
 	cout<<"\nBridges: ";
 	vector<pair<int,int> > bridges =
 	G1.findBridges();
+	*/
+
+	cout<<"\nArticulation Points: ";
+	G1.findArticulationPoints();
+
 
 	/*Grid G;
 	G.takeInput();
