@@ -48,11 +48,12 @@ int main(){
 	cout<<"\nBridges: ";
 	vector<pair<int,int> > bridges =
 	G1.findBridges();
-	*/
-
+	
 	cout<<"\nArticulation Points: ";
 	G1.findArticulationPoints();
-
+	*/
+	cout<<"Strongly Connected Components: ";
+	cout<<G1.stronglyConnectedComponents()<<"\n";
 
 	/*Grid G;
 	G.takeInput();

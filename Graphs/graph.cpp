@@ -1,6 +1,6 @@
 
 class Graph{
-	int numOfNodes,numOfVertices;
+	int numOfNodes,numOfVertices,id=0;
 	vector<int> lowLink, ids;
 	vector<vector<int> > G;
 	vector<bool> visited;
@@ -16,7 +16,7 @@ public:
 		//	cin>>w;
 			G[u].push_back(v);
 		//	edgeW[{u,v}]=w;
-			G[v].push_back(u);
+		//	G[v].push_back(u);
 		//	edgeW[{min(u,v),max(u,v)}]=w;
 		}
 	}
@@ -57,6 +57,10 @@ public:
 
 	void traversalArt(int root, int cur, int src, int id, int &outEC, vector<bool> &isArt); 
 	vector<bool> findArticulationPoints();
+
+	void traversalSCC(int cur, int src, stack<int> &st, vector<bool> &onStack,int &scc);
+	int stronglyConnectedComponents();
+
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
@@ -67,3 +71,4 @@ public:
 #include "floydWarshall.cpp"
 #include "bridge.cpp"
 #include "articulationPoints.cpp"
+#include "scc.cpp"
