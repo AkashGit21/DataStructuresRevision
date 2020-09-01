@@ -9,7 +9,7 @@ using namespace std;
 
 int main(){
 	Graph G1; int startingNode=1, endingNode=5;
-	G1.takeInput();
+	//G1.takeInput();
 	/*cout<<"\nDFS: ";	
 	int numOfComponents = G1.dfs(startingNode);
 	cout<<"\nNumber of Connected Components: "<<numOfComponents;
@@ -51,9 +51,14 @@ int main(){
 	
 	cout<<"\nArticulation Points: ";
 	G1.findArticulationPoints();
-	*/
+	
 	cout<<"Strongly Connected Components: ";
 	cout<<G1.stronglyConnectedComponents()<<"\n";
+	*/
+	G1.adjMatInput();
+	cout<<"Travelling Salesman Problem: ";
+	G1.getPathTSP(0);
+
 
 	/*Grid G;
 	G.takeInput();

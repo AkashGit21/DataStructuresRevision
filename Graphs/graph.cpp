@@ -31,6 +31,16 @@ public:
 			edgeW[{u,v}]=weight;
 		}
 	}
+	void adjMatInput(){
+		cin>>numOfNodes>>numOfVertices;
+		G.resize(numOfNodes,vector<int>(numOfNodes));
+
+		int u,v; ll weight;
+		for(int i=0;i<numOfVertices;i++){
+			cin>>u>>v>>weight;	
+			G[u][v]=weight;
+		}
+	}
 	
 	void dfsUtil(int startingNode,int source);
 	int dfs(int startingNode);
@@ -61,6 +71,8 @@ public:
 	void traversalSCC(int cur, int src, stack<int> &st, vector<bool> &onStack,int &scc);
 	int stronglyConnectedComponents();
 
+	vector<vector<ll> > TSP(int S);
+	vector<int> getPathTSP(int startingNode);
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
@@ -72,3 +84,4 @@ public:
 #include "bridge.cpp"
 #include "articulationPoints.cpp"
 #include "scc.cpp"
+#include "tsp.cpp"
