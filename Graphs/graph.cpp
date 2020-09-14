@@ -1,4 +1,12 @@
 
+class comparePILByWeight{
+public:
+	template <typename T>
+	bool operator()(T &A,T &B){
+		return A.second>B.second;
+	}
+};
+
 class Graph{
 	int numOfNodes,numOfEdges,id=0;
 	vector<int> lowLink, ids;
@@ -13,11 +21,11 @@ public:
 		int u,v; ll w;
 		for(int i=0;i<numOfEdges;++i){
 			cin>>u>>v;
-		//	cin>>w;
+			cin>>w;
 			G[u].push_back(v);
 		//	edgeW[{u,v}]=w;
-		//	G[v].push_back(u);
-		//	edgeW[{min(u,v),max(u,v)}]=w;
+			G[v].push_back(u);
+			edgeW[{min(u,v),max(u,v)}]=w;
 		}
 	}
 	void dagInput(){
@@ -81,6 +89,9 @@ public:
 	int findEndingNode(vector<int> in, vector<int> out);
 	void eulerPath();
 
+
+	vector<vector<int> > primsMST();
+
 };
 #include "dfs.cpp"
 #include "bfs.cpp"
@@ -94,3 +105,4 @@ public:
 #include "scc.cpp"
 #include "tsp.cpp"
 #include "eulerPath.cpp"
+#include "mst.cpp"

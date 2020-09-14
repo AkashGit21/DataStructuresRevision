@@ -13,7 +13,7 @@ int Graph::dfs(int node){
 	int connectedComponents = 0;
 	visited.resize(numOfNodes+1,false);
 	
-	//Considering Disconnected Graph as well	
+	//Considering Disconnected Graph as well
 	for(int i=1;i<=numOfNodes;i++){
 		if(visited[i]) continue;
 		connectedComponents++;

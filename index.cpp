@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 #define ll long long
+#define pil pair<int,ll>
+#define piil pair<pair<int,int>,ll>
 #define INF 1e18 + 2
 using namespace std;
 
@@ -9,7 +11,7 @@ using namespace std;
 
 int main(){
 	Graph G1; int startingNode=1, endingNode=5;
-	//G1.takeInput();
+	G1.takeInput();
 	/*cout<<"\nDFS: ";	
 	int numOfComponents = G1.dfs(startingNode);
 	cout<<"\nNumber of Connected Components: "<<numOfComponents;
@@ -58,9 +60,14 @@ int main(){
 	G1.adjMatInput();
 	cout<<"Travelling Salesman Problem: ";
 	G1.getPathTSP(0);
-	*/
+	
 	G1.dagInput();
 	G1.eulerPath();
+	*/
+
+	vector<vector<int> > mst = G1.primsMST();
+	//cout<<"\nDFS of MST: "; 
+
 
 
 	/*Grid G;

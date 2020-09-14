@@ -1,17 +1,9 @@
-#define pil pair<int,ll>
-
-class compareDijkstra{
-public:
-	bool operator()(pil &A,pil &B){
-		return A.second>B.second;
-	}
-};
 
 vector<vector<ll> > Graph::lazyDijkstra(int startingNode){
 	visited.resize(numOfNodes+1,false);
 	vector<ll> dist(numOfNodes+1,1e18+1);
 	vector<ll> prev(numOfNodes+1,-1);
-	priority_queue<pil,vector<pil>,compareDijkstra> pq;
+	priority_queue<pil,vector<pil>,comparePILByWeight> pq;
 
 	pq.push({startingNode,0LL});
 	dist[startingNode]=0LL;
