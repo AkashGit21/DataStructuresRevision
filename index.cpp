@@ -72,14 +72,14 @@ int main(){
 	//cout<<"\nDFS of MST: "; 
 
 	
-	// Tree t1;
-	// t1.takeInput();
-	// cout<<"\nLCA:"<<t1.lca(10,9,1);
+	Tree t1;
+	t1.takeInput();
+	cout<<"\nLCA:"<<t1.lca(6,9,1);
 	
 
-	Algo a1;
-	vector<int> v{2,5,3,7,11,8,10,13,6};
-	cout<<"LIS: "<<a1.LIS(v)<<"\n";
+	// Algo a1;
+	// vector<int> v{2,5,3,7,11,8,10,13,6};
+	// cout<<"LIS: "<<a1.LIS(v)<<"\n";
 	
 	// Grid G;
 	// G.takeInput();
