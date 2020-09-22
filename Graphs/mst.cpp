@@ -1,4 +1,6 @@
 
+
+// O(M*log(M))
 vector<vector<int> > Graph::primsMST(){
 
 	visited.resize(numOfNodes+1,false);

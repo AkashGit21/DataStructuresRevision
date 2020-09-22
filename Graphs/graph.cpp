@@ -21,11 +21,11 @@ public:
 		int u,v; ll w;
 		for(int i=0;i<numOfEdges;++i){
 			cin>>u>>v;
-			cin>>w;
+		//	cin>>w;
 			G[u].push_back(v);
 		//	edgeW[{u,v}]=w;
 			G[v].push_back(u);
-			edgeW[{min(u,v),max(u,v)}]=w;
+		//	edgeW[{min(u,v),max(u,v)}]=w;
 		}
 	}
 	void dagInput(){
@@ -92,6 +92,8 @@ public:
 
 	vector<vector<int> > primsMST();
 
+
+	friend class Tree;
 };
 #include "dfs.cpp"
 #include "bfs.cpp"

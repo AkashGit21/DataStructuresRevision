@@ -3,14 +3,17 @@
 #define pil pair<int,ll>
 #define piil pair<pair<int,int>,ll>
 #define INF 1e18 + 2
+#define SIZE 100002
+#define LOGSIZE log2(SIZE)
 using namespace std;
 
 #include "Graphs/graph.cpp"
 #include "Trees/tree.cpp"
 #include "Grid/grid.cpp"
+#include "Algorithms/algo.cpp"
 
 int main(){
-	Graph G1; int startingNode=1, endingNode=5;
+	/*Graph G1; int startingNode=1, endingNode=5;
 	G1.takeInput();
 	/*cout<<"\nDFS: ";	
 	int numOfComponents = G1.dfs(startingNode);
@@ -65,15 +68,23 @@ int main(){
 	G1.eulerPath();
 	*/
 
-	vector<vector<int> > mst = G1.primsMST();
+	//vector<vector<int> > mst = G1.primsMST();
 	//cout<<"\nDFS of MST: "; 
 
+	
+	// Tree t1;
+	// t1.takeInput();
+	// cout<<"\nLCA:"<<t1.lca(10,9,1);
+	
 
-
-	/*Grid G;
-	G.takeInput();
-	cout<<"Distance: "<<G.bfsOnGrid(1,1);
-	*/
+	Algo a1;
+	vector<int> v{2,5,3,7,11,8,10,13,6};
+	cout<<"LIS: "<<a1.LIS(v)<<"\n";
+	
+	// Grid G;
+	// G.takeInput();
+	// cout<<"Distance: "<<G.bfsOnGrid(1,1);
+	
 
 	return 0;
 }
