@@ -1,4 +1,4 @@
-//O(N)
+//Time Complexity - O(N)
 void Graph::dfsUtil(int node,int src){
 	cout<<" "<<node;
 	visited[node]=true;
@@ -21,6 +21,6 @@ int Graph::dfs(int node){
 		dfsUtil(i,-1);
 	}
 	
-	//dfsUtil(node,-1,visited);
+	//returns the number of connected components
 	return connectedComponents;
 }

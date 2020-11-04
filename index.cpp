@@ -5,12 +5,14 @@
 #define INF 1e18 + 2
 #define SIZE 100002
 #define LOGSIZE log2(SIZE)
+#define MOD 1000000007
 using namespace std;
 
 #include "Graphs/graph.cpp"
 #include "Trees/tree.cpp"
 #include "Grid/grid.cpp"
 #include "Algorithms/algo.cpp"
+#include "Mathematical/Maths.cpp"
 
 int main(){
 	/*Graph G1; int startingNode=1, endingNode=5;
@@ -67,15 +69,21 @@ int main(){
 	G1.dagInput();
 	G1.eulerPath();
 	*/
+	Graph G1;
+	G1.adjMatInput();
+	cout<<"Max Flow : "<<G1.edmondsKarp(0,5)<<"\n";
+
 
 	//vector<vector<int> > mst = G1.primsMST();
 	//cout<<"\nDFS of MST: "; 
 
 	
-	Tree t1;
-	t1.takeInput();
-	cout<<"\nLCA:"<<t1.lca(6,9,1);
+	// Tree t1;
+	// t1.takeInput();
+	// cout<<"\nLCA:"<<t1.lca(6,9,1);
 	
+	// Maths mt;
+	// mt.seive();
 
 	// Algo a1;
 	// vector<int> v{2,5,3,7,11,8,10,13,6};

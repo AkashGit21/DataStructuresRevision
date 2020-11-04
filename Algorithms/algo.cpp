@@ -3,4 +3,4 @@ public:
 	int LIS(vector<int> A);
 };
 
-#include "lis.cpp"
+#include "LongestIncreasingSubsequence.cpp"

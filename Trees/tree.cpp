@@ -6,9 +6,7 @@ class Tree: public Graph{
 public:
 
 	void lcaUtil(int src,int par, int dpt);
-	int lca(int node1, int node2, int root);
-
-	
+	int lca(int node1, int node2, int root);	
 
 };
 

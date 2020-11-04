@@ -4,7 +4,6 @@ int Algo::LIS(vector<int> A){
 	
 	last.push_back(A[0]);
 	for(int i=1;i<A.size();i++){
-		//cout<<"\n"<<A[i]<<" ";
 		if(A[i]<last[0]) last[0]=A[i];
 		else if(A[i]>last[last.size()-1]) last.push_back(A[i]);
 		else{

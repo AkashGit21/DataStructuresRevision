@@ -20,10 +20,12 @@ vector<int> Graph::bfs(int node){
 	return prev;
 }
 
+//To get the path from StartingNode to lastNode
 vector<int> Graph::reconstructPathFromBFS(
 	vector<int> prev, int startingNode, int endingNode){
 	
-	vector<int> path;
+	vector<int> path; //To store the path
+
 	int ind=endingNode;
 	path.push_back(endingNode); 
 	while(prev[ind]!=-1){

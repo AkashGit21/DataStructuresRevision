@@ -92,6 +92,8 @@ public:
 
 	vector<vector<int> > primsMST();
 
+	bool bfsEdmonds(vector<vector<ll> > residualG, int s, int t, vector<int> &par);
+	ll edmondsKarp(int s, int t);
 
 	friend class Tree;
 };
@@ -108,3 +110,4 @@ public:
 #include "tsp.cpp"
 #include "eulerPath.cpp"
 #include "mst.cpp"
+#include "edmondKarp.cpp"
